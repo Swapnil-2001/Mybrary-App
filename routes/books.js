@@ -35,7 +35,7 @@ router.get('/new', async (req, res) => {
 })
 
 // Create book route
-router.post('/', async (req, res) => {    // single file upload; name --> cover
+router.post('/', async (req, res) => {    
   const book = new Book({
     title: req.body.title,
     author: req.body.author,
