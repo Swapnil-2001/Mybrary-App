@@ -7,7 +7,9 @@ const Book = require('../models/book');
 router.get('/', async (req, res) => {
   let searchOptions = {};
   if (req.query.name) {
-    searchOptions.name = new RegExp(req.query.name, 'i')
+    // A regular expression is a sequence of characters that forms a search pattern.
+    // The search pattern can be used for text search and text replace operations.
+    searchOptions.name = new RegExp(req.query.name, 'i')    // i is a modifier (modifies the search to be case-insensitive)
   }
   try{
     const authors = await Author.find(searchOptions);
